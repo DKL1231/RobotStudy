@@ -10,7 +10,7 @@ gray_img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 blur_img = cv.GaussianBlur(gray_img, (3, 3), 1)
 # 3. Canny Edge로 Edge만 검출
-canny_img = cv.Canny(img, 80, 255)
+canny_img = cv.Canny(blur_img, 80, 255)
 # 4. ROI로 차선 부분만 추출
 ## 직사각형이 아닌 사다리꼴 등의 모양으로 ROI 할 때 사용 ##
 def region_of_interest(img, vertices, color3=(255, 255, 255), color1=255):  # ROI 셋팅
